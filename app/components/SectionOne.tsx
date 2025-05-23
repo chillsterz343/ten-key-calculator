@@ -2,6 +2,15 @@ import styles from "../page.module.css";
 import ClearIcon from "@mui/icons-material/Clear";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
+interface SectionOneTypes {
+  handleNumberClick: (number: string) => void;
+  handleOperatorClick: (op: string) => void;
+  grandTotal: () => void;
+  handleClear: () => void;
+  feed: () => void;
+  displayValue: string;
+}
+
 export const SectionOne = ({
   handleNumberClick,
   handleOperatorClick,
@@ -9,7 +18,7 @@ export const SectionOne = ({
   handleClear,
   feed,
   displayValue,
-}) => {
+}: SectionOneTypes) => {
   return (
     <div className={styles.mainButtonSection}>
       <div className={styles.row}>

@@ -3,28 +3,41 @@ import { CustomSlider } from "./CustomSlider";
 import CustomThumbComponent from "./CustomThumb";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import ContentCutIcon from "@mui/icons-material/ContentCut";
+import { Dispatch, SetStateAction } from "react";
 
-export const SliderRow = ({ setRoundValue, cutPaper, feed }) => {
-  const handleOnChange = (e) => {
-    switch (e.target.value) {
-      case 0:
-        setRoundValue("F");
-        break;
-      case 1:
-        setRoundValue("6");
-        break;
-      case 2:
-        setRoundValue("3");
-        break;
-      case 3:
-        setRoundValue("2");
-        break;
-      case 4:
-        setRoundValue("1");
-        break;
-      case 5:
-        setRoundValue("0");
-        break;
+interface SliderRowTypes {
+  setRoundValue: Dispatch<SetStateAction<string>>;
+  cutPaper: () => void;
+  feed: () => void;
+}
+
+export const SliderRow = ({
+  setRoundValue,
+  cutPaper,
+  feed,
+}: SliderRowTypes) => {
+  const handleOnChange = (event: Event, value: number | number[]) => {
+    if (event.isTrusted) {
+      switch (value) {
+        case 0:
+          setRoundValue("F");
+          break;
+        case 1:
+          setRoundValue("6");
+          break;
+        case 2:
+          setRoundValue("3");
+          break;
+        case 3:
+          setRoundValue("2");
+          break;
+        case 4:
+          setRoundValue("1");
+          break;
+        case 5:
+          setRoundValue("0");
+          break;
+      }
     }
   };
 

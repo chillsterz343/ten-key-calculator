@@ -1,6 +1,10 @@
 import styles from "../page.module.css";
 
-export const Display = ({ displayValue }) => {
+interface DisplayType {
+  displayValue: string;
+}
+
+export const Display = ({ displayValue }: DisplayType) => {
   return (
     <div className={styles.displayOutline}>
       <div className={styles.displayInner}>

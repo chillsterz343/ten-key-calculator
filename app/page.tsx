@@ -13,10 +13,10 @@ export default function Home() {
   const [output, setOutput] = useState<string[]>([]);
   const [result, setResult] = useState<number>(0);
   const [operator, setOperator] = useState<string>("+");
-  const calculatorRef = useRef(null); // Ref to the calculator div
-  const outputRef = useRef(null);
-  const bottomRef = useRef(null);
-
+  const calculatorRef = useRef<HTMLInputElement>(null); // Ref to the calculator div
+  const outputRef = useRef<HTMLInputElement>(null);
+  const bottomRef = useRef<HTMLInputElement>(null);
+  
   const formatNumberWithCommas = (number: string) => {
     const numStr = number.toString().replace(/,/g, "");
     const parts = numStr.split("."); // Split into integer and decimal parts
@@ -31,7 +31,7 @@ export default function Home() {
     setDisplayValue(formatNumberWithCommas(newNumber));
   };
 
-  const handleOperatorClick = (op) => {
+  const handleOperatorClick = (op: string) => {
     setOperator(op);
     setOutput([...output, displayValue + op]);
     handleCalculate();
@@ -160,7 +160,7 @@ export default function Home() {
 
   useEffect(() => {
     const currentRef = calculatorRef.current;
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: { key: string; }) => {
       const key = event.key;
 
       if (/[0-9]/.test(key)) {
