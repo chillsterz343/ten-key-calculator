@@ -40,3 +40,27 @@ a {
     color-scheme: dark;
   }
 }
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: #0a0a0a;
+  cursor: pointer;
+  color: black;
+  font-size: x-large;
+}
+
+button:hover {
+  background-color: rgb(87, 87, 87);
+}
+
+button:active {
+  background-color: rgb(87, 87, 87);
+  transform: translateY(1px);
+}
+
+@font-face{
+  font-family:'digital-7-font';
+  src: url('../public/Digital7-rg1mL.ttf');
+ }
