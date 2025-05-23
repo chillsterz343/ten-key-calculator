@@ -1,3 +1,6 @@
+# 10-Key-Calculator
+This is a working 10 key calculator or adding machine that saves the output in the same manner as a real adding machine.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
